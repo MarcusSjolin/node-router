@@ -7,8 +7,8 @@ function Router()
     var routes = []
 
     return {
-        add: function(name, route) {
-            routes.push (new Route(name, route))
+        add: function(name, route, callback) {
+            routes.push (new Route(name, route, callback))
         },
         find: function(route) {
             var resultRoute = false
@@ -20,6 +20,15 @@ function Router()
                 }
             })
 
+
+            return resultRoute
+        },
+        gitAll: function() {
+            var resultRoutes = []
+
+            routes.forEach(function(testRoute) {
+                resultRoutes.push(testRoute.route)
+            })
 
             return resultRoute
         }

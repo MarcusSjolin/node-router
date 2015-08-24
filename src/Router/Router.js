@@ -30,7 +30,7 @@ function Router()
                 resultRoutes.push(testRoute.route)
             })
 
-            return resultRoute
+            return resultRoutes
         }
     }
 }

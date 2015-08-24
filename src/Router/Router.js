@@ -23,7 +23,7 @@ function Router()
 
             return resultRoute
         },
-        gitAll: function() {
+        getAll: function() {
             var resultRoutes = []
 
             routes.forEach(function(testRoute) {

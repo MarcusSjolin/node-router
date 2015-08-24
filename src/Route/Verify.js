@@ -1,6 +1,6 @@
 var XRegExp = require("xregexp").XRegExp
 
-exports = module.exports = function (name, route, regex, params) {
+exports = module.exports = function (name, route, callback, regex, params) {
     return function(query) {
         if (regex.xtest(query)) {
             var variables = XRegExp.exec(query, regex)
@@ -18,6 +18,7 @@ exports = module.exports = function (name, route, regex, params) {
             result.name = name
             result.route = route
             result.query = query
+            result.callback = callback
 
             return result
         }
